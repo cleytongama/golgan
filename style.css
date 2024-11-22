@@ -1,0 +1,1019 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0; 
+    background: linear-gradient(90deg, #4f0743  0%, #d2006a  50%, #00d85c  100%);
+    color: #fff; 
+    font-family: Arial, sans-serif; 
+    background-size: cover; 
+    background-attachment: fixed; 
+  
+}
+
+/* Barra Superior */
+.top-bar {
+  opacity: 75%;
+  top: 0;
+  width: 100%;
+  color: white;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente no desktop */
+  align-items: center;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+/* Alinhamento para os elementos internos */
+.top-bar .left-info {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os spans */
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem; /* Tamanho padrão no desktop */
+}
+.left-info span {
+  text-transform: uppercase;
+  font-weight: bold; 
+  font-size: 2rem;
+  letter-spacing: 1px; 
+}
+
+.social-icons {
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+}
+
+.social-icons a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.social-icons a img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  top: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza no desktop */
+  z-index: 999;
+  padding: 0 20px;
+}
+
+.navbar .logo {
+    position: absolute;
+    left: 40px;
+    padding: 2px 150px;
+}
+
+.navbar .logo img {
+  width: 150px;
+  transition: transform 0.3s;
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.1);
+}
+
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Espaçamento entre os itens */
+}
+
+.navbar .menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar .menu li a:hover {
+  color: #00ff87;
+}
+
+.navbar .menu li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #00ff87;
+  transition: width 0.3s;
+}
+
+.navbar .menu li a:hover::after {
+  width: 100%; /* Efeito de sublinhado */
+}
+
+/* Ícone do Menu Hambúrguer */
+.hamburger {
+  display: none; /* Esconde o hambúrguer no desktop */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px; /* Posiciona no lado direito */
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+/* Sidebar Menu */
+
+
+/* Sidebar Menu */
+.menu-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Esconde o menu lateral fora da tela */
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95); /* Fundo escuro */
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
+  z-index: 1100;
+}
+
+.menu-sidebar.active {
+  right: 0; /* Mostra o menu lateral quando a classe "active" é adicionada */
+}
+
+.menu-sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-sidebar li a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu-sidebar li a:hover {
+  color: #00ff87;
+}
+
+/* RESPONSIVIDADE */
+
+/* Mobile - Esconder menu horizontal e mostrar hambúrguer */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none !important; /* Esconde o menu horizontal no mobile */
+  }
+
+  .hamburger {
+    display: flex !important; /* Mostra o menu hambúrguer */
+  }
+}
+
+/* Desktop - Esconder menu sidebar e hambúrguer */
+@media screen and (min-width: 769px) {
+  .menu-sidebar {
+    display: none; /* Garante que o sidebar não aparece no desktop */
+  }
+
+  .hamburger {
+    display: none; /* Esconde o ícone do menu hambúrguer no desktop */
+  }
+}
+
+
+/* Sessões */
+section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* Botão de Ação (CTA) */
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: #00ff87;
+  color: #001f3f;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #00796b;
+}
+
+/* Home */
+.home {
+  position: relative; /* Define um contexto para posicionamento absoluto */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center; /* Centraliza o texto */
+  overflow: hidden; /* Impede que elementos escapem da seção */
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.home iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* Coloca o vídeo atrás de tudo */
+  filter: brightness(60%);
+  border: none;
+}
+
+.home .overlay {
+  z-index: 1; /* Coloca o conteúdo acima do vídeo e imagens */
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+.home .overlay img {
+  max-width: 450px;
+  max-height: 250px;
+  width: auto;
+  height: auto;
+}
+
+.home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.home p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.home .cta-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(45deg, #FF4081, #FF007F);
+  border-radius: 8px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.home .cta-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #FF007F, #FF4081);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Imagens de canto */
+.home .corner-image-direita,
+.home .corner-image-esquerda {
+  position: absolute; /* Permite posicionamento livre */
+  z-index: -1; /* Coloca as imagens atrás do conteúdo */
+  width: 100px; /* Ajusta o tamanho das imagens */
+  height: auto;
+  pointer-events: none; /* Evita interações com as imagens */
+}
+
+/* Imagem à direita */
+.home .corner-image-direita {
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Imagem à esquerda */
+.home .corner-image-esquerda {
+  top: 10px;
+  left: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .home .overlay {
+    max-width: 90%; /* Reduz a largura do overlay */
+  }
+
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+
+  .home .cta-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column; /* Empilha conteúdo no mobile */
+    padding: 20px;
+  }
+
+  .home .overlay img {
+    max-width: 70%; /* Reduz o tamanho da imagem do overlay */
+  }
+
+  .home .corner-image-direita,
+  .home .corner-image-esquerda {
+    display: none; /* Esconde as imagens de canto no mobile */
+  }
+  .top-bar {
+    flex-direction: column; /* Empilha os elementos */
+    padding: 10px 15px; /* Reduz padding */
+    text-align: center; /* Centraliza o texto */
+    
+  }
+
+  .top-bar .left-info {
+      flex-direction: row; /* Mantém os spans em linha */
+      gap: 10px; /* Reduz o espaçamento entre spans */
+      font-size: 1rem; /* Texto menor em tablets */
+      white-space: nowrap; /* Impede quebra de linha */
+  }
+}
+
+@media (max-width: 480px) {
+  .home h1 {
+    font-size: 1.8rem;
+  }
+
+  .home p {
+    font-size: 0.9rem;
+  }
+
+  .home .cta-btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .home .overlay img {
+    max-width: 80%;
+    margin-bottom: 15px;
+  }
+}
+
+
+
+
+/* Serviços */
+#servicos {
+  
+  
+  color: black;
+  padding: 80px 20px;
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Configuração principal */
+#servicos {
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.servicos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr); 
+  width: 100%;
+  height: 100%;
+  gap: 2px;
+}
+
+/* Configuração dos quadrados */
+.servico-item {
+  position: relative;
+  background-size: cover; 
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Títulos e detalhes */
+.servico-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2; 
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.servico-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Título vai para o topo ao ativar */
+.servico-item.active .servico-title {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Detalhes inicialmente escondidos */
+.servico-detalhes {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.servico-item.active .servico-detalhes {
+  opacity: 1;
+  margin-top: 50px; 
+}
+
+/* Cores específicas e imagens de fundo */
+.servico-item:nth-child(1) {
+  background-image: url('caminho/para/sua-imagem1.jpg'); /* Imagem do Audiovisual */
+}
+
+.servico-item:nth-child(2) {
+  background-image: url('caminho/para/sua-imagem2.jpg'); /* Imagem do Eventos */
+}
+
+.servico-item:nth-child(3) {
+  background-image: url('caminho/para/sua-imagem3.jpg'); /* Imagem do Comunicação */
+}
+
+.servico-item:nth-child(4) {
+  background-image: url('caminho/para/sua-imagem4.jpg'); /* Imagem do Marketing */
+}
+
+/* Sobreposição para facilitar leitura */
+.servico-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.servico-item:hover::before {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo geral para os itens de serviço */
+.servico-item {
+  position: relative;
+  background-size: cover; /* Faz a imagem cobrir todo o espaço */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  color: white; /* Garante que o texto fique legível */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px; /* Espaçamento entre os itens */
+}
+
+/* Fundo semitransparente para texto */
+.servico-content {
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo fique acima da imagem */
+  background: rgba(0, 0, 0, 0.6); /* Fundo escuro semitransparente */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+/* Efeito visual ao passar o mouse */
+.servico-item:hover {
+  transform: scale(1.02); /* Leve zoom no item */
+  transition: transform 0.3s ease;
+}
+
+
+/* Sobre */
+#sobre {
+ 
+  color: white;
+}
+
+#sobre .container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#sobre .text {
+  flex: 1;
+  text-align: left;
+}
+
+#sobre .image {
+  flex: 1;
+}
+
+#sobre .image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#sobre h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#sobre p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Estilo do Container */
+.info-container {
+  padding: 50px 20px; 
+  
+}
+
+/* Configuração do Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+/* Estilo de cada Item */
+.info-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #512da8; 
+  margin-bottom: 10px;
+}
+
+.info-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555; 
+}
+
+/* Estilo dos Ícones */
+.info-icon {
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%; 
+  margin-bottom: 15px; 
+  object-fit: cover; 
+  background-color: #512da8; 
+  padding: 3px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Galeria */
+#galeria {
+  
+  color: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+}
+
+/* Contato */
+#contato {
+  
+  color: white;
+  padding: 50px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.text-container {
+  flex: 1 1 40%;
+  text-align: left;
+}
+
+.text-container h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-btn {
+  text-decoration: none;
+  background: white;
+  color: inherit;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn.whatsapp {
+  color: #25d366;
+}
+
+.social-btn.instagram {
+  color: #c13584;
+}
+
+.social-btn.email {
+  color: #000000;
+}
+
+.social-btn.linkedin {
+  color: #0077b5;
+}
+
+.social-btn.vimeo {
+  color: #1ab7ea;
+}
+
+.form-container {
+  flex: 1 1 55%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form textarea {
+  resize: none;
+}
+
+form button {
+  width: 100%;
+  padding: 15px;
+  background: #ff4500;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #e63e00;
+}
+
+/* Estilo da seção de clientes */
+.clientes-section {
+  padding: 50px 20px;
+  text-align: center; 
+}
+
+/* Título da seção */
+.clientes-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff; 
+  margin-bottom: 30px;
+}
+
+/* Grade para as logos */
+.clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 20px; 
+  justify-items: center;
+}
+
+/* Cada item do cliente */
+.cliente-item {
+  width: 150px; 
+  height: 150px; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  background: white; 
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Efeito ao passar o mouse */
+.cliente-item:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
+/* Estilo das imagens */
+.cliente-item img {
+  max-width: 80%; 
+  max-height: 80%; 
+  object-fit: contain; 
+}
+
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #ff4500, #007aff, #00ff87);
+  color: white;
+  padding: 50px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1 1 20%;
+  min-width: 200px;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-logos {
+  margin-top: 20px; 
+  text-align: center;
+}
+
+/* Responsividade para telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .navbar .logo img {
+    max-width: 100px;
+  }
+
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home .cta-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .servicos-container {
+    grid-template-columns: 1fr; /* Um item por linha */
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clientes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+/* Responsividade para telas menores que 480px (smartphones) */
+@media (max-width: 480px) {
+  .top-bar {
+      padding: 8px 10px; /* Ajusta ainda mais o padding */
+      font-size: 0.8rem; /* Reduz o tamanho geral */
+    }
+
+    .top-bar .left-info {
+      flex-direction: row; /* Mantém os spans em linha */
+      gap: 5px; /* Espaçamento menor no mobile */
+      font-size: 0.7rem; /* Texto menor para evitar quebra */
+      white-space: nowrap; /* Garante que o texto não quebre */
+    }
+
+    .left-info span {
+      text-transform: uppercase;
+      font-weight: bold; 
+      font-size: 1rem;
+      letter-spacing: 1px; 
+    }
+
+  .navbar ul {
+    gap: 5px;
+  }
+
+  .navbar .logo img {
+    max-width: 80px;
+  }
+
+  .home h1 {
+    font-size: 1.5rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+
+  .servico-item {
+    height: auto;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Uma coluna */
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
